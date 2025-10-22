@@ -1,0 +1,15 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "COSMOS_ENDPOINT": "<COSMOS_ENDPOINT>",
+    "COSMOS_KEY": "<COSMOS_KEY>",
+    "AMAZON_ACCESS_KEY": "<AMAZON_ACCESS_KEY>",
+    "AMAZON_SECRET_KEY": "<AMAZON_SECRET_KEY>",
+    "AMAZON_ASSOC_TAG": "<AMAZON_ASSOC_TAG>",
+    "EBAY_CLIENT_ID": "<EBAY_CLIENT_ID>",
+    "EBAY_CLIENT_SECRET": "<EBAY_CLIENT_SECRET>",
+    "EBAY_CAMPAIGN_ID": "<EBAY_CAMPAIGN_ID>"
+  }
+}

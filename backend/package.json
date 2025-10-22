@@ -1,0 +1,20 @@
+{
+  "name": "jaws-affiliate-backend",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "func start --verbose",
+    "watch": "tsc -w -p tsconfig.json"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.1",
+    "@azure/cosmos": "^3.17.0",
+    "aws4": "^1.14.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "azure-functions-core-tools": "^4.0.5095"
+  }
+}
