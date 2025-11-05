@@ -9,7 +9,7 @@ interface Product {
 const AMAZON_TAG = "jawsmovie1975-20";
 
 // Default fallback products (use real ASINs where possible)
-const defaultProducts: Product[] = [
+const defaultProducts: Product[] = [    
   {
     title: "Jaws Blu-ray (2012 Remaster)",
     asin: "B00UGQW8F2",
