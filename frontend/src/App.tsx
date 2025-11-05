@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchProducts } from "./services/api";
 import { ProductList } from "./components/ProductList";
 import "./index.css"; // Ensure global styles are applied
+import { NavbarOnly } from "./NavbarOnly";
 
 function App() {
   const [amazonLimit, setAmazonLimit] = useState<number>(() => parseInt(localStorage.getItem("amazonLimit") || "8", 10));
@@ -15,7 +16,7 @@ function App() {
   }, [amazonLimit, ebayLimit]);
 
   async function load() {
-    setLoading(true);
+    setLoading(true); 
     try {
       const [a, e] = await Promise.all([
         fetchProducts("amazon", "jaws", amazonLimit),
@@ -46,6 +47,7 @@ function App() {
         <img src="/images/jmovie_2012c.jpg" width="950" height="180" style={{ marginBottom: "24px" }}></img>
         <h1 style={{ fontSize: "1.8rem" }}>🦈 JAWSmovie.com Recommends</h1>
         <p style={{ color: "#555" }}>JAWS 50th Products on Amazon and eBay</p>
+        <NavbarOnly />
       </header>
 
       <section style={{
