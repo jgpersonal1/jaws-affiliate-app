@@ -1,47 +1,28 @@
-// src/components/ProductList.tsx
 import React from "react";
+import "../App.css";
 
 export const ProductList = ({ items }: { items: any[] }) => {
   if (!items?.length) return <div>No items available.</div>;
 
-  return (  
-    <div style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
-      gap: "16px",
-    }}>
+  return (
+    <div className="product-grid">
       {items.map((item, i) => (
         <a
           key={i}
           href={item.link}
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textDecoration: "none",
-            background: "white",
-            borderRadius: 12,
-            padding: 12,
-            boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-            transition: "transform 0.15s ease-in-out",
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.03)")}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1.0)")}
+          className="product-card"
         >
           <img
             src={item.image}
             alt={item.title}
-            style={{ width: "100%", borderRadius: 8, objectFit: "contain" }}
+            className="product-image"
           />
-          <div style={{
-            marginTop: 8,
-            fontWeight: 600,
-            fontSize: 14,
-            textAlign: "center",
-            color: "#111"
-          }}>{item.title}</div>
+          <div className="product-info">
+            <div className="product-title">{item.title}</div>
+            <button className="shop-button">Shop Now →</button>
+          </div>
         </a>
       ))}
     </div>

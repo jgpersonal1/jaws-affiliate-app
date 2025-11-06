@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchProducts } from "./services/api";
 import { ProductList } from "./components/ProductList";
+import "./App.css";
 import "./index.css"; // Ensure global styles are applied
 import { NavbarOnly } from "./NavbarOnly";
 
