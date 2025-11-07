@@ -63,10 +63,10 @@ function App() {
             width="950"
             height="180"
             alt="Jaws banner"
-            style={{ marginBottom: "24px", width: "100%", height: "auto" }}
+            style={{ marginBottom: "0px", width: "100%", height: "auto" }}
           />
-          <h1 style={{ fontSize: "1.8rem" }}>🦈 JAWSmovie.com Recommends</h1>
-          <p style={{ color: "#555" }}>JAWS 50th Products on Amazon and eBay</p>
+          {/* <h1 style={{ fontSize: "1.8rem" }}>🦈 JAWSmovie.com Recommends</h1>
+          <p style={{ color: "#555" }}>JAWS 50th Products on Amazon and eBay</p> */}
           <NavbarOnly />
         </header>
 
@@ -79,7 +79,6 @@ function App() {
             marginBottom: 24,
           }}
         >
-          <h2 style={{ fontSize: "1.25rem" }}>Settings</h2>
           <div
             style={{
               display: "flex",
@@ -89,7 +88,7 @@ function App() {
             }}
           >
             <label>
-              Amazon listings:
+              Show Amazon listings:
               <input
                 type="number"
                 min={1}
@@ -102,7 +101,7 @@ function App() {
               />
             </label>
             <label>
-              eBay listings:
+              Show eBay listings:
               <input
                 type="number"
                 min={1}
@@ -120,13 +119,13 @@ function App() {
 
         {/* Amazon section */}
         <section>
-          <h2 style={{ fontSize: "1.25rem" }}>Amazon</h2>
+          <h2 style={{ fontSize: "1.25rem" }}>🦈 JAWS 50th on Amazon</h2>
           {loading ? <div>Loading…</div> : <ProductList items={amazonItems} />}
         </section>
 
         {/* eBay section */}
         <section style={{ marginTop: 30 }}>
-          <h2 style={{ fontSize: "1.25rem" }}>eBay</h2>
+          <h2 style={{ fontSize: "1.25rem" }}>🦈 JAWS 50th on eBay</h2>
           {loading ? <div>Loading…</div> : <ProductList items={ebayItems} />}
         </section>
 
@@ -155,7 +154,7 @@ function App() {
       </main>
 
       {/* Sidebar (videos) */}
-      {/* <VideoSidebar /> */}
+      <VideoSidebar />
     </div>
   );
 }
