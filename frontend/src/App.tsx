@@ -155,7 +155,7 @@ function App() {
       </main>
 
       {/* Sidebar (videos) */}
-      <VideoSidebar />
+      {/* <VideoSidebar /> */}
     </div>
   );
 }
