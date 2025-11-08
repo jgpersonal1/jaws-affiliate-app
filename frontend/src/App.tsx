@@ -1,8 +1,6 @@
-// src/App.tsx
 import React, { useEffect, useState } from "react";
 import { fetchProducts } from "./services/api";
 import { ProductList } from "./components/ProductList";
-import { VideoSidebar } from "./components/VideoSidebar";
 import { NavbarOnly } from "./NavbarOnly";
 import "./App.css";
 import "./index.css";
@@ -47,38 +45,26 @@ function App() {
   return (
     <div
       style={{
-        display: "grid",
-        gridTemplateColumns: "2fr 1fr",
-        gap: "24px",
-        maxWidth: 1300,
+        maxWidth: 1200,
         margin: "0 auto",
         padding: "16px",
       }}
     >
-      {/* Main content */}
       <main>
         <header style={{ textAlign: "center", marginBottom: "24px" }}>
           <img
             src="/images/jmovie_2012c.jpg"
             width="950"
             height="180"
-            alt="Jaws banner"
-            style={{ marginBottom: "0px", width: "100%", height: "auto" }}
+            style={{ marginBottom: "24px", maxWidth: "100%", height: "auto" }}
           />
           {/* <h1 style={{ fontSize: "1.8rem" }}>🦈 JAWSmovie.com Recommends</h1>
           <p style={{ color: "#555" }}>JAWS 50th Products on Amazon and eBay</p> */}
           <NavbarOnly />
         </header>
 
-        {/* Settings */}
-        <section
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "12px",
-            marginBottom: 24,
-          }}
-        >
+        <section style={{ marginBottom: 24 }}>
+          <h2 style={{ fontSize: "1.25rem" }}>Settings</h2>
           <div
             style={{
               display: "flex",
@@ -88,7 +74,7 @@ function App() {
             }}
           >
             <label>
-              Show Amazon listings:
+              Amazon listings:
               <input
                 type="number"
                 min={1}
@@ -101,7 +87,7 @@ function App() {
               />
             </label>
             <label>
-              Show eBay listings:
+              eBay listings:
               <input
                 type="number"
                 min={1}
@@ -117,19 +103,16 @@ function App() {
           </div>
         </section>
 
-        {/* Amazon section */}
         <section>
-          <h2 style={{ fontSize: "1.25rem" }}>🦈 JAWS 50th on Amazon</h2>
+          <h2 style={{ fontSize: "1.25rem" }}>Amazon</h2>
           {loading ? <div>Loading…</div> : <ProductList items={amazonItems} />}
         </section>
 
-        {/* eBay section */}
         <section style={{ marginTop: 30 }}>
-          <h2 style={{ fontSize: "1.25rem" }}>🦈 JAWS 50th on eBay</h2>
+          <h2 style={{ fontSize: "1.25rem" }}>eBay</h2>
           {loading ? <div>Loading…</div> : <ProductList items={ebayItems} />}
         </section>
 
-        {/* Footer */}
         <footer
           style={{
             marginTop: 30,
@@ -152,9 +135,6 @@ function App() {
           We may earn a commission from links on this page.
         </footer>
       </main>
-
-      {/* Sidebar (videos) */}
-      <VideoSidebar />
     </div>
   );
 }
