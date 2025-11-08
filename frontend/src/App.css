@@ -85,3 +85,18 @@ body {
     padding: 6px 12px;
   }
 }
+/* Hide hamburger on desktop */
+.hamburger-button {
+  display: none;
+}
+
+/* Hide desktop links on mobile */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .hamburger-button {
+    display: block !important;
+  }
+}

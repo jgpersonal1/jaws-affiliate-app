@@ -51,17 +51,16 @@ function App() {
       }}
     >
       <main>
-        <header style={{ textAlign: "center", marginBottom: "24px" }}>
-          <img
-            src="/images/jmovie_2012c.jpg"
-            width="950"
-            height="180"
-            style={{ marginBottom: "24px", maxWidth: "100%", height: "auto" }}
-          />
-          {/* <h1 style={{ fontSize: "1.8rem" }}>🦈 JAWSmovie.com Recommends</h1>
-          <p style={{ color: "#555" }}>JAWS 50th Products on Amazon and eBay</p> */}
-          <NavbarOnly />
-        </header>
+      <header style={{ textAlign: "center", marginBottom: "24px" }}>
+        <img
+          src="/images/jmovie_2012c.jpg"
+          width="950"
+          height="180"
+          style={{ marginBottom: "0px" }} // was 24px
+          alt="Jaws Header"
+        />
+        <NavbarOnly />
+      </header>
 
         <section style={{ marginBottom: 24 }}>
           <h2 style={{ fontSize: "1.25rem" }}>Settings</h2>

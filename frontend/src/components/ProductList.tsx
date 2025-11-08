@@ -8,7 +8,7 @@ export const ProductList = ({ items }: { items: any[] }) => {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
+        gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
         gap: "16px",
       }}
     >
@@ -27,25 +27,23 @@ export const ProductList = ({ items }: { items: any[] }) => {
             borderRadius: 12,
             padding: 12,
             boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-            transition: "transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
+            transition: "transform 0.15s ease-in-out",
           }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "scale(1.03)";
-            e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "scale(1.0)";
-            e.currentTarget.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1)";
-          }}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.transform = "scale(1.03)")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.transform = "scale(1.0)")
+          }
         >
           <img
             src={item.image}
             alt={item.title}
             style={{
               width: "100%",
+              height: "auto",
               borderRadius: 8,
               objectFit: "contain",
-              maxHeight: 200,
             }}
           />
           <div
@@ -59,20 +57,28 @@ export const ProductList = ({ items }: { items: any[] }) => {
           >
             {item.title}
           </div>
-          <button
-            style={{
-              marginTop: 8,
-              backgroundColor: "#2563eb",
-              color: "white",
-              border: "none",
-              padding: "8px 12px",
-              borderRadius: 8,
-              cursor: "pointer",
-              fontWeight: 500,
-            }}
-          >
-            Shop Now →
-          </button>
+
+          {/* Optional: Add “Shop Now” button */}
+          {item.link && (
+            <button
+              style={{
+                marginTop: 10,
+                backgroundColor: "#2563eb",
+                color: "white",
+                border: "none",
+                padding: "6px 12px",
+                borderRadius: 8,
+                cursor: "pointer",
+                fontSize: 13,
+              }}
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(item.link, "_blank", "noopener,noreferrer");
+              }}
+            >
+              Shop Now
+            </button>
+          )}
         </a>
       ))}
     </div>
