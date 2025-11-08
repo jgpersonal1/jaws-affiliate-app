@@ -85,18 +85,18 @@ body {
     padding: 6px 12px;
   }
 }
-/* Hide hamburger on desktop */
-.hamburger-button {
+
+
+/* Mobile navbar behavior */
+.hamburger {
   display: none;
 }
 
-/* Hide desktop links on mobile */
 @media (max-width: 768px) {
-  .desktop-nav {
+  .nav-links-desktop {
     display: none !important;
   }
-
-  .hamburger-button {
+  .hamburger {
     display: block !important;
   }
 }
